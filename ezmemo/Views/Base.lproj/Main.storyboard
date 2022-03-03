@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Controller-->
+        <scene sceneID="dhK-Ux-PHY">
+            <objects>
+                <tabBarController storyboardIdentifier="MainView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YWb-ge-kQj" customClass="MainController" customModule="ezmemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Mz2-PG-I8g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="BgColor"/>
+                        <color key="selectedImageTintColor" name="AccentColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Gyg-o8-oKj" kind="relationship" relationship="viewControllers" id="c80-YF-1bs"/>
+                        <segue destination="Rba-zN-0xZ" kind="relationship" relationship="viewControllers" id="Hkp-Dz-pxF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0F7-CV-KWg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-41" y="-36"/>
+        </scene>
+        <!--Folders-->
+        <scene sceneID="Pyz-yx-piP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Folders" id="Rba-zN-0xZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Folders" image="folder" catalog="system" id="R7u-8G-id0">
+                        <color key="badgeColor" systemColor="systemBlueColor"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gn0-a1-xUk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583" y="-142"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Ld4-qt-Atc">
+            <objects>
+                <viewController storyboardIdentifier="WebView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="55u-D7-jD4" customClass="WebViewController" customModule="ezmemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jYz-Vi-ksJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpC-1h-SqK">
+                                <rect key="frame" x="157" y="423" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Bbl-8Y-rD4"/>
+                                    <constraint firstAttribute="height" constant="50" id="PyI-48-HSd"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="会員規約">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="openWebSite:" destination="55u-D7-jD4" eventType="touchUpInside" id="XSj-Xo-e0x"/>
+                                </connections>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7s-aD-MEr">
+                                <rect key="frame" x="4" y="64" width="406" height="300"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="bwx-fg-k8T"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my-icon" translatesAutoresizingMaskIntoConstraints="NO" id="5sH-8f-7ER">
+                                <rect key="frame" x="4" y="493" width="406" height="319"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zxD-jA-Xqf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GpC-1h-SqK" firstAttribute="centerX" secondItem="jYz-Vi-ksJ" secondAttribute="centerX" id="2yb-PK-jMm"/>
+                            <constraint firstItem="zxD-jA-Xqf" firstAttribute="bottom" secondItem="5sH-8f-7ER" secondAttribute="bottom" constant="50" id="67W-eL-qIk"/>
+                            <constraint firstItem="GpC-1h-SqK" firstAttribute="centerY" secondItem="jYz-Vi-ksJ" secondAttribute="centerY" id="MEE-hp-Nwz"/>
+                            <constraint firstItem="5sH-8f-7ER" firstAttribute="leading" secondItem="zxD-jA-Xqf" secondAttribute="leading" constant="4" id="Tmm-71-Yzq"/>
+                            <constraint firstItem="W7s-aD-MEr" firstAttribute="top" secondItem="zxD-jA-Xqf" secondAttribute="top" constant="20" id="c36-WX-VbE"/>
+                            <constraint firstItem="zxD-jA-Xqf" firstAttribute="trailing" secondItem="5sH-8f-7ER" secondAttribute="trailing" constant="4" id="esr-S6-LmP"/>
+                            <constraint firstItem="W7s-aD-MEr" firstAttribute="leading" secondItem="zxD-jA-Xqf" secondAttribute="leading" constant="4" id="hpG-M9-UPk"/>
+                            <constraint firstItem="zxD-jA-Xqf" firstAttribute="trailing" secondItem="W7s-aD-MEr" secondAttribute="trailing" constant="4" id="u8b-tI-h3x"/>
+                            <constraint firstItem="5sH-8f-7ER" firstAttribute="top" secondItem="GpC-1h-SqK" secondAttribute="bottom" constant="20" id="yxq-uQ-4lI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="5sH-8f-7ER" id="Bzp-vC-vK2"/>
+                        <outlet property="webView" destination="W7s-aD-MEr" id="vPd-lM-hU1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aN4-DF-LjU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1292.753623188406" y="-36.160714285714285"/>
+        </scene>
+        <!--MemoList-->
+        <scene sceneID="xW0-R0-ujc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MemoList" id="Gyg-o8-oKj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List" image="list.bullet.rectangle" catalog="system" id="rEC-Eh-6t7" userLabel="List">
+                        <color key="badgeColor" systemColor="linkColor"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bS-Ld-OYY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="593" y="-320"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="folder" catalog="system" width="128" height="97"/>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="my-icon" width="225" height="225"/>
+        <namedColor name="AccentColor">
+            <color red="0.14900000393390656" green="0.85500001907348633" blue="0.99199998378753662" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="BgColor">
+            <color red="0.079999998211860657" green="0.10999999195337296" blue="0.15299999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
